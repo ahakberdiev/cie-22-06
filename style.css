@@ -1,6 +1,6 @@
 :root {
     --black-01: #000;
-    --black-02: #030303;
+    --black-02: #0e0e0e;
     --white-01: #fff;
     --white-02: #ddd;
     --grey-01: #111;
@@ -36,4 +36,28 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 200;
+}
+
+a {
+    color: var(--white-01);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+a:hover {
+    color: var(--blue-03);
+}
+
+a:active {
+    color: var(--blue-01);
+}
+
+nav {
+    display: block;
+    position: sticky;
+    top:0;
+
+    border-bottom: 1px solid var(--white-01);
+
+    background-color: var(--black-02);
 }
