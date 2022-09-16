@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CIE2206 Net</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./math.js"></script>
+</head>
+<body>
+    <p>
+        This page imports special JavaScript library to extend mathematical functionality of JavaScript <br>
+        Here you can try evaluating some mathematical operations
+    </p>
+    <input type="text" class="field" value="type expression here" style="width: 250px;" id="field">
+    <button id="btn">Evaluate</button><br>
+    Output: <span id="output"></span>
+    <div id="hint"></div>
+    <script>
+        var parser = math.parser()
+        var btn = document.getElementById("btn")
+        var field = document.getElementById("field")
+        var out = document.getElementById("output")
+        var hint =document.getElementById("hint")
+        btn.onclick = function() {
+            out.textContent = parser.evaluate(field.value)
+        }
+        var hints = [
+            'You can enter more than one operation (e.g. "3+5*4")',
+            'Complex numbers are supported. Use "i" postfix after a number (e.g. "4i")',
+            'You can even define you own function! Syntax "f(a, b) = a*b". f(2,3) >>> 6',
+            'You can name functions and their parameters as you want!',
+            'Trigonometric functions are supported: tan(45 deg) or tan(pi/4). However, they may be inaccurate',
+            'to get a square root use sqrt(x). To get a n\'th root use x^(1/n)',
+            'Try entering big numbers!',
+            'All these calculations made on you pc! Tough expressions can cause a lag!',
+        ]
+        var currentHint = 0;
+        hint.textContent = hints[currentHint];
+        let interval = setInterval(function() {
+            currentHint++
+            if (currentHint >= hints.length) currentHint = 0
+            hint.textContent = hints[currentHint]
+        }, 10000)
+    </script>
+</body>
+</html>
