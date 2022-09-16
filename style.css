@@ -3,9 +3,9 @@
     --black-02: #0e0e0e;
     --white-01: #fff;
     --white-02: #ddd;
-    --grey-01: #333;
-    --grey-02: #444;
-    --grey-03: #555;
+    --grey-01: #555;
+    --grey-02: #777;
+    --grey-03: #999;
     --red-01: #5a0000;
     --red-02: #720000;
     --red-03: #bb0000;
@@ -27,7 +27,7 @@
 }
 
 * {
-    box-sizing: border-box;
+    box-sizing: border-box !important;
     word-wrap: break-word;
     white-space: nowrap;
 }
@@ -117,4 +117,22 @@ header div.full {
 
 .HeaderName {
     font-size: 1.5em;
+}
+
+button {
+    color: var(--white-01);
+    border: 1px solid var(--white-01);
+    background-color: inherit;
+    font-family: consolas, monospace;
+}
+
+button:hover {
+    color: var(--black-01);
+    background-color: var(--white-01);
+}
+
+button:active {
+    color: var(--black-01);
+    background-color: var(--grey-03);
+    border-color: var(--grey-03);
 }
